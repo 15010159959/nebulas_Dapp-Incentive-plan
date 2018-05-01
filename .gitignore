@@ -1,0 +1,5 @@
+.idea
+.swp
+/node_modules
+/assets/theme/sass/.sass-cache
+/assets/theme/css/style.css.map

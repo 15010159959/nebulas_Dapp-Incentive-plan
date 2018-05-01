@@ -1,0 +1,223 @@
+// navbar common
+
+.navbar-dropdown
+  left: 0
+  padding: 0
+  position: absolute
+  right: 0
+  top: 0
+  +transition(all 0.45s ease)
+  z-index: 1030
+  .navbar-brand
+    float: none
+    font-size: 0
+    padding: 1.25rem 0
+    position: relative
+    +transition(padding 0.25s ease)
+    white-space: nowrap
+    &::before
+      content: ""
+      display: inline-block
+      height: 100%
+      vertical-align: middle
+  .navbar-logo
+    display: inline-block
+    vertical-align: middle
+    margin-right: 0.8rem
+    +transition(margin 0.3s ease-in-out)
+    img
+      height: 2rem
+      +transition(all 0.3s ease-in-out)
+  &.navbar-fixed-top
+    position: fixed
+  .navbar-close
+    left: 0.6875rem
+    position: fixed
+    top: 0.75rem
+    z-index: 1000
+  &.opened
+    background: none !important
+    .navbar-brand, .navbar-toggler
+      display: none
+  .hamburger-icon
+    content: ""
+    width: 16px
+    +box-shadow(0 -6px 0 1px, 0 0 0 1px, 0 6px 0 1px)
+
+  .close-icon
+    position: relative
+    width: 21px
+    height: 21px
+    overflow: hidden
+    &::before, &::after
+      content: ''
+      position: absolute
+      height: 2px
+      width: 100%
+      top: 50%
+      left: 0
+      margin-top: -1px
+    &::before
+      +rotate(45deg)
+    &::after
+      +rotate(-45deg)
+
+.nav-dropdown
+  display: table !important
+  font-size: 0.812rem
+  font-weight: 700
+  height: auto !important
+  .nav-item
+    display: table-cell
+    float: none
+    vertical-align: middle
+  .nav-btn
+    padding-left: 1rem
+  .link
+    margin: 1em 1.667em 0 1.667em
+    padding-bottom: 1em
+    border-bottom: 2px solid transparent
+    transition: color .2s ease-in-out
+    &::after
+      color: inherit
+
+@media (max-width: $normal-width)
+  .nav-dropdown.navbar-toggleable-sm
+    bottom: 0
+    display: none
+    left: 0
+    overflow-x: hidden
+    position: fixed
+    top: 0
+    +translateX(-100%)
+    width: 18.75rem
+    z-index: 999
+@media (min-width: $normal-width) and (max-width: 1000px)
+  .nav-dropdown
+    .link
+      margin: 1em 0.8em 0 0.8em
+      padding-bottom: 0.6rem
+
+.nav-dropdown-sm
+  display: block !important
+  overflow-x: hidden
+  overflow: auto
+  padding-top: 3.875rem
+  &::after
+    content: ""
+    display: block
+    height: 3rem
+    width: 100%
+  &.collapse.in ~ .navbar-close
+    display: block !important
+  &.collapsing, &.collapse.in
+    +translateX(0)
+    +transition(all 0.25s ease-out)
+  &.collapsing[aria-expanded="false"]
+    +translateX(-100%)
+  .nav-item
+    display: block
+    margin-left: 0 !important
+    padding-left: 0
+  .nav-btn
+    position: relative
+    padding: 1.5625rem 1.5625rem 0 1.5625rem
+    &::before
+      border-top: 1px dotted rgba(255, 255, 255, 0.1)
+      content: ""
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+    + .nav-btn
+      padding-top: 0.625rem
+      &::before
+        display: none
+  .btn
+    padding: 0.625rem 0
+
+.is-builder .nav-dropdown.collapsing
+  transition: none !important
+
+
+// menu
+
+#menu
+  .hide-buttons .nav-btn
+    display: none !important
+  .navbar-toggler, .link
+    color: $black
+  .link
+    font-size: 0.812rem
+    font-weight: 400
+  .hightlight
+    color: $black-dark
+    border-bottom: 2px solid $black-dark
+  .link:hover, .link:focus
+    color: $black-dark
+    border-bottom: 2px solid $black-dark
+    +transition(border-bottom 0.3s ease-in-out, color 0.3s ease-in-out)
+  .link[aria-expanded="true"]
+    background: $white
+  .nav-dropdown-sm
+    .link
+      &:focus, &:hover
+        border-bottom-color: $black-dark
+        background: $white
+  .nav-dropdown-sm
+    background: $white
+    .link[aria-expanded="true"]
+      background: $white
+  .bg-color.transparent
+    background: none
+    .link
+      color: $white
+      transition: none
+    .hightlight
+      color: $white
+      &:visited, &:active
+        color: $white
+      &:hover, &:active
+        cursor: $white
+  .link[aria-expanded="true"]
+    color: $white !important
+  &.mbr-navbar--stuck .mbr-navbar__section
+    background: $black
+  .mbr-navbar__hamburger
+    color: $white
+  .close-icon
+    &::before, &::after
+      background-color: $white
+  .navbar.navbar-dropdown.bg-color.transparent
+    top: 0
+    left: 0
+    position: absolute
+    right: 0
+    height: 90px
+
+.navbar-brand .text-black
+  color: #000 !important
+
+.navbar-toggler.collapsed .hum-top, .hum-middle, .hum-bottom
+  position: absolute
+  content: ""
+  right: 0
+  width: 20px
+  height: 3px
+
+.navbar-toggler.collapsed
+  .hum-top
+    top: -1px
+  .hum-middle
+    top: 6px
+  .hum-bottom
+    bottom: 0
+
+.navbar-close
+  .close-icon
+    display: block
+  &.collapsed .close-icon
+    display: none
+
+.navbar-toggler
+  position: relative

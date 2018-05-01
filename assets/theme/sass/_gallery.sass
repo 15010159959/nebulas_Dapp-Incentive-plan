@@ -1,0 +1,440 @@
+.mbr-gallery
+  .icon
+    z-index: 100 !important
+  .card-img
+    position: relative
+  .mbr-gallery-item > div:hover
+    .icon-play, .icon-focus
+      opacity: 1
+  .icon-play
+    color: white
+    opacity: 0.5
+    position: absolute
+    top: calc(50% - 2.6rem)
+    left: calc(50% - 1.5rem)
+    font-size: 3rem
+    transition: .2s opacity ease-in-out
+    z-index: 5
+
+.iconfont
+  font-family: "iconfont" !important
+  font-size: 16px
+  font-style: normal
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.mbr-gallery
+  .icon-play::before
+    position: absolute
+  .icon-focus
+    color: white
+    opacity: 0
+    position: absolute
+    top: calc(50% - 24px)
+    left: calc(50% - 32px)
+    font-size: 3rem !important
+    transition: .2s opacity ease-in-out
+    z-index: 5
+    font-family: 'et-line' !important
+
+  .mbr-gallery-item
+    cursor: pointer
+    font-size: 1rem
+  .item-overlay
+    position: absolute
+    width: 60px
+    font-size: 60px
+    z-index: 10
+    height: 60px
+    top: calc(50% - 30px)
+    left: calc(50% - 30px)
+    cursor: pointer
+    z-index: 5
+
+.mbr-gallery-row
+  padding-left: 0px
+  padding-right: 0px
+  overflow: hidden
+
+.mbr-gallery-item__hided
+  position: absolute !important
+  width: 0px !important
+  height: 0px
+  left: 0 !important
+  padding: 0 !important
+  img, span
+    display: none
+
+.mbr-gallery-filter
+  padding-top: 30px
+  padding-bottom: 30px
+  text-align: center
+  &.gallery-filter__bg
+    li
+      color: white
+    .active
+      color: black
+      background-color: $white
+  ul
+    padding-left: 0px
+    display: inline-block
+    list-style: none
+    margin-bottom: 0px
+  li
+    font-size: 0.8rem
+    cursor: pointer
+    display: inline-block
+    padding: 9px 30px 9px 30px
+    border: 1px solid $gray
+    transition: all 0.3s ease-out
+    &:hover
+      color: #c39f76
+    &.active
+      color: white
+      &:hover
+        color: white
+
+.mbr-gallery-item > div
+  position: relative
+  padding: 0 1rem 2rem 1rem
+
+.mbr-gallery-item--p1
+  padding: 1rem
+
+.mbr-gallery-item--p2
+  padding: 2rem
+
+.mbr-gallery-item--p3
+  padding: 3rem
+
+.mbr-gallery-item--p4
+  padding: 4rem
+
+.mbr-gallery-item--p5
+  padding: 5rem
+
+.mbr-gallery
+  .mbr-gallery-item--p6, .mbr-gallery-item--p5, .mbr-gallery-item--p4
+    width: 100%
+
+@media (max-width: 992px)
+  .mbr-gallery-item--p1
+    padding: 1rem
+  .mbr-gallery-item--p2
+    padding: 2rem
+  .mbr-gallery-item--p3, .mbr-gallery-item--p4, .mbr-gallery-item--p5
+    padding: 3rem
+
+.video-container .mbr-background-video iframe
+  width: 100%
+  height: 100%
+
+@media (max-width: 992px) and (min-width: 400px)
+  .mbr-gallery
+    .mbr-gallery-item--p6, .mbr-gallery-item--p5, .mbr-gallery-item--p4, .mbr-gallery-item--p3, .mbr-gallery-item--p2
+      width: 100%
+
+@media (max-width: 400px)
+  .mbr-gallery
+    .mbr-gallery-item--p6, .mbr-gallery-item--p5, .mbr-gallery-item--p4
+      width: 100%
+  .mbr-gallery-item--p3
+    width: 100%
+
+.mbr-overlay
+  @include background(linear-gradient(top, transparent, rgba(11, 15, 43, 1)))
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  height: 250px
+  z-index: 1
+  ~ *
+    z-index: 2
+
+.mbr-section-full
+  .mbr-background-video, .mbr-background-video-preview
+    min-height: 100vh
+
+.mbr-section-dark
+  .mbr-section-title
+    color: $white
+
+
+.mbr-background-video
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+
+.mbr-background-video-preview
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+  z-index: 0 !important
+
+
+
+//
+// gallery
+
+.mbr-gallery .mbr-gallery-item
+  position: relative
+  p
+    margin-top: 0.8rem
+    span
+      color: $gray-dark
+      font-weight: 200
+  img
+    opacity: 1
+    +transition(opacity 0.3s ease-in-out)
+    width: 100%
+  > a
+    &:hover img
+      opacity: 1
+    background: $white
+    display: block
+    outline: none
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      @include background(linear-gradient(left, #554346, #45505b))
+      opacity: 0
+      +transition(opacity 0.3s ease-in-out)
+  .icon
+    +transition(opacity 0.3s ease-in-out)
+    color: #000
+    font-size: 30px
+    height: 69px
+    left: 50%
+    opacity: 0
+    position: absolute
+    top: 50%
+    width: 69px
+    &::before
+      content: ""
+      display: block
+      position: absolute
+      height: 69px
+      width: 1px
+      margin-left: 34.5px
+      background-color: $white
+    &::after
+      content: ""
+      display: block
+      position: absolute
+      height: 69px
+      width: 1px
+      margin-left: 34.5px
+      background-color: $white
+      width: 69px
+      height: 1px
+      margin-left: 0
+      margin-top: 34.5px
+  > a:hover
+    .icon
+      opacity: 1
+    &::before
+      opacity: 0.9
+
+.mbr-gallery-title
+  font-size: 0.9em
+  position: absolute
+  display: block
+  width: 100%
+  bottom: 0
+  padding: 1rem
+  color: $white
+  @include background(linear-gradient(left, rgba(85, 67, 70, 0.85), rgba(69, 80, 91, 0.85)))
+  +transition(background 0.3s ease-in-out)
+
+.mbr-gallery
+  .mbr-gallery-item > a:hover .mbr-gallery-title
+    background: transparent !important
+  .mbr-gallery-row.no-gutter
+    margin: 0
+    .mbr-gallery-item
+      padding: 0
+  .container.mbr-gallery-layout-default
+    padding: 93px 0
+  .mbr-gallery-layout-default, .mbr-gallery-layout-article
+    overflow: hidden
+  .modal
+    position: fixed
+    overflow: hidden
+    padding-right: 0 !important
+  .modal-content
+    border-radius: 0
+  .modal-body
+    padding: 0
+    img
+      width: 100%
+  .modal
+    .close
+      position: fixed
+      opacity: 0.5
+      font-size: 55px
+      font-weight: 300
+      width: 70px
+      height: 70px
+      border-radius: 50%
+      color: $white
+      top: 2.5rem
+      right: 2.5rem
+      line-height: 61px
+      border: 0
+      text-align: center
+      text-shadow: none
+      z-index: 5
+      +transition(opacity 0.3s ease)
+      &:hover
+        opacity: 1
+        color: $white
+    &.in .modal-dialog
+      margin: 0 auto
+
+@media (max-width: $normal-width)
+  .mbr-gallery
+    .carousel-indicators, .carousel-control, .modal .close
+      position: fixed
+
+
+.mbr-gallery .modal
+  &.fade .modal-dialog
+    +transition(margin-top 0.3s ease-in-out)
+  &.in .modal-dialog, &.fade .modal-dialog
+    +transform(none)
+
+.mbr-slider
+  .carousel-inner >
+    .active, .next, .prev
+      display: table
+  .carousel-control
+    position: absolute
+    width: 70px
+    height: 70px
+    top: 50%
+    margin-top: -35px
+    line-height: 70px
+    border-radius: 50%
+    color: $white
+    border: 0
+    opacity: 0.5
+    text-shadow: none
+    z-index: 5
+    color: $white
+    +transition(all 0.3s ease-in-out)
+
+.mbr-gallery .mbr-slider
+  .carousel-control
+    position: fixed
+  .carousel-inner > .active
+    display: block
+
+@media (max-width: 991px)
+  .mbr-gallery .mbr-slider .carousel-control
+    bottom: 2.5rem
+    margin-top: 0
+    top: auto
+    z-index: 17
+
+.mbr-slider
+  .carousel-control
+    &.left
+      left: 0
+      margin-left: 2.5rem
+      background: none
+    &.right
+      right: 0
+      margin-right: 2.5rem
+      background: none
+    .icon-next, .icon-prev
+      font-size: 40px
+      line-height: 27px
+      color: $white
+    &:hover
+      opacity: 1
+  .carousel-indicators
+    position: absolute
+    bottom: 0
+    margin-bottom: 1.5rem !important
+
+@media (max-width: 543px)
+  .mbr-slider .carousel-indicators
+    display: none
+
+.mbr-gallery .mbr-slider .carousel-indicators
+  position: fixed
+  margin-bottom: 2.5rem !important
+
+@media (max-width: 991px)
+  .mbr-gallery .mbr-slider .carousel-indicators
+    margin-bottom: 3.625rem !important
+    padding-left: 2.5rem
+    padding-right: 2.5rem
+
+.mbr-slider
+  .carousel-indicators
+    li
+      width: 15px
+      height: 15px
+      margin: 3px
+      background: #1b1b1b
+      border: 0
+      opacity: 0.5
+    .active
+      width: 15px
+      height: 15px
+      margin: 3px
+      background: #1b1b1b
+      border: 0
+      opacity: 0.5
+      border: 4px solid #1b1b1b
+      background: $white
+  >
+    .boxed-slider
+      position: relative
+      padding: 93px 0
+      > div
+        position: relative
+    .container img
+      width: 100%
+      + .row
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        +transform(translateY(-50%))
+        z-index: 2
+  .mbr-section
+    padding: 0
+    background-attachment: scroll
+  .mbr-table-cell
+    padding: 0
+  >
+    .container .carousel-indicators
+      margin-bottom: 3px
+    .article-slider .mbr-section
+      padding-top: 0
+      padding-bottom: 0
+      .mbr-table-cell
+        padding-top: 0
+        padding-bottom: 0
+.mbr-gallery.mbr-section p
+  font-weight: 400
+
+@media (max-width: $normal-width)
+  .mbr-slider
+    .carousel-control
+      top: auto
+      bottom: 20px
+    > .container .carousel-control
+      margin-bottom: 0px
